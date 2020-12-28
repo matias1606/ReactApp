@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from "./Footer";
+import Main from "./Main"
+import Header from "./Header"
 
-function App() {
+// class App extends React.Component {
+  
+//   // El metodo render se ejecuta cuando 
+//   // un componente entra en pantalla
+//   render(
+//       <>
+//         <header>
+//           <h1></h1>
+//         </header>
+//         <footer>
+//           <p>&copy; Copyright</p>
+//         </footer>
+//   )
+// }
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header/>
+      {/* <Main/>
+      <Footer/> */}
+    </>
   );
 }
 
