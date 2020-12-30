@@ -2,6 +2,7 @@ import './App.css';
 import Footer from "./Footer";
 import Main from "./Main"
 import Header from "./Header"
+import ItemListContainer from "./components/ItemListContainer"
 
 // class App extends React.Component {
   
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       <Header/>
+      <ItemListContainer/>
       {/* <Main/>
       <Footer/> */}
     </>

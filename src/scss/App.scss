@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
 *{
- font-family: 'Source Sans Pro', sans-serif;;
+ font-family: 'Source Sans Pro', sans-serif;
 }
 .App {
     text-align: center;
@@ -31,16 +31,23 @@
     height: 45px;
     width: 45px;
   }
+  .icono{
+    font-size: 25px;
+    color: white;
+  }
+  h1{
+    margin: 30px;
+  }
   nav{
     font-weight: lighter;
-    height: 120px;
+    height: 80px;
     background-color: black;
     border-radius: 30px;
     margin: 30px;
     display: flex;
     #carrito{
-      height: 54px;
-      width: 53px;
+      height: 50px;
+      width: 48px;
     }
     a{
       margin-left:1%;
@@ -56,6 +63,7 @@
       width: 40%;
       input{
         font-weight: lighter;
+        outline: none;
         height:25px;
         border-radius: 20px;
         border:black;
@@ -67,7 +75,8 @@
     .compras{
       color: white;
       width: 15%;
-      margin-left:8%;
+      margin-left:7%;
+      justify-content: space-evenly;
       h4{
         font-size: 15px;
         align-self: center;
@@ -77,8 +86,8 @@
     img{
       border-radius: 30px;
       margin-left: 20px;
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 70px;
     }
     .perfil{
       .flechita{
