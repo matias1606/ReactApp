@@ -1,16 +1,26 @@
 import React from 'react'
 import logo from '../img/logo.png';
-import lupita from '../img/icono.png'
 import flechita from "../img/flechita.png"
 import CartWidget from "./CartWidget"
+const secciones = ["Novedades ","Hombre ","Mujer ","Contacto "]
+const ListaDeSecciones = () => {
+
+    return(
+        <div className="secciones">
+        {secciones.map((seccion) => (
+            <a href="#">{seccion}</a>
+        ))}
+        </div>
+
+    )
+}
 const NavBar = () => {
     return (
         <nav>
-            <a href="#"><img src={logo} alt="logo" /></a>
-            <div className="busqueda">
-                <a href="#buscar"><img src={lupita} id="lupa" alt=""/></a>
-                <input id="buscar" placeholder="buscar..." type="text"/>
+            <div className="inicio">
+                 <a href="#"><img src={logo} alt="logo" /></a>
             </div>
+            <ListaDeSecciones/>
             <CartWidget/>
             <div className="perfil">
                 <div className="foto">

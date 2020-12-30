@@ -45,39 +45,55 @@
     border-radius: 30px;
     margin: 30px;
     display: flex;
+    .inicio{
+      width: 10%;
+    }
     #carrito{
       height: 50px;
       width: 48px;
     }
     a{
-      margin-left:1%;
       align-self: center;
       justify-self: center;
+      text-decoration: none;
+      color: white;
     }
     div{
       display: flex;
     }
-    .busqueda{
-      display: flex;
-      margin-left:6%;
-      width: 40%;
-      input{
-        font-weight: lighter;
-        outline: none;
-        height:25px;
-        border-radius: 20px;
-        border:black;
-        width: 98%;
-        align-self: center;
+    .secciones{
+      width: 20%;
+      color:white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      justify-content: space-evenly;
+      a{
+        font-size: 16px;
+        font-weight: 500;
+        &:hover{
+          width: auto;
+          padding:10px;
+          border-radius: 20px;
+          color: black;
+          background-color: #53E0DB;
+          transition: all 0.3s ease-in-out;
+        }
+        
       }
-    
     }
     .compras{
       color: white;
-      width: 15%;
+      width: 30%;
       margin-left:7%;
-      justify-content: space-evenly;
+      justify-content: flex-end;
+      align-content: center;
+      padding-left: 2%;
+      a{
+        margin-left: 4%;
+      }
       h4{
+        margin-left: 4%;
         font-size: 15px;
         align-self: center;
         text-align: center;
@@ -90,13 +106,14 @@
       width: 70px;
     }
     .perfil{
+      width: 30%;
+      justify-content: flex-end;
+      align-content: flex-end;
+      color: white;
       .flechita{
         height: 14.8px;
         width: 20.4px;
       }
-      margin-left: 5%;
-      width: 20%;
-      color: white;
       h4{
         align-self: center;
         justify-self: center;
