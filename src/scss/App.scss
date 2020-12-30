@@ -74,10 +74,11 @@
         &:hover{
           width: auto;
           padding:10px;
+          border-color: white;
           border-radius: 20px;
           color: black;
           background-color: #53E0DB;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.4s ease-in-out;
         }
         
       }
