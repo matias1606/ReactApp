@@ -22,7 +22,7 @@ const App = () => {
   return (
     <>
       <Header/>
-      <ItemListContainer/>
+      <ItemListContainer greeting="Greeting"/>
       {/* <Main/>
       <Footer/> */}
     </>

@@ -1,8 +1,9 @@
 import React from 'react'
 
-const ItemListContainer = () =>{
+const ItemListContainer = (prop) =>{
+
     return(
-        <h1>Catalogo</h1>
+        <h1>{prop.greeting}</h1>
     )
 }
 export default ItemListContainer
