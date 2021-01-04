@@ -16,6 +16,7 @@ const ListaDeSecciones = () => {
 }
 const NavBar = () => {
     return (
+        <>
         <nav>
             <div className="inicio">
                  <a href="#"><img src={logo} alt="logo" /></a>
@@ -34,6 +35,7 @@ const NavBar = () => {
            
            
         </nav>
+        </>
     )
 }
 
