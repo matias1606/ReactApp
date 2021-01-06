@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Main from "./Main"
 import Header from "./Header"
 import ItemListContainer from "./components/ItemListContainer"
-
+import {BrowserRouter} from "react-router-dom"
 // class App extends React.Component {
   
 //   // El metodo render se ejecuta cuando 
@@ -21,10 +21,12 @@ import ItemListContainer from "./components/ItemListContainer"
 const App = () => {
   return (
     <>
-      <Header/>
-      <ItemListContainer greeting="Greeting"/>
-      {/* <Main/>
-      <Footer/> */}
+      <BrowserRouter>
+        <Header/>
+        <ItemListContainer greeting="Greeting"/>
+        <Main/>
+        {/* <Footer/> */}
+      </BrowserRouter>
     </>
   );
 }

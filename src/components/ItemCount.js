@@ -21,19 +21,6 @@ const ItemCount = ({stock,initial,onAdd}) => {
 
     return(
         <>
-        <div className="grid-container">
-            <div className="IMG">
-                <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8dHNoaXJ0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt=""/>
-            </div>
-            <div className="Nombre">
-                Remera X SSSS
-            </div>
-            <div className="Precio">
-                <p>Precio</p>
-            </div>
-            <div className="descripcionPrecio">
-                <p>$2000</p>
-            </div>
             <div className="cantidad">
                 <p>Cantidad</p>
             </div>
@@ -47,7 +34,6 @@ const ItemCount = ({stock,initial,onAdd}) => {
             <div className="carrito">
                 <button  onClick={()=>{AgregarAlCarrito()}}>Agregar al Carrito</button>
             </div>
-        </div>
         </>
     )  
 }

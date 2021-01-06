@@ -1,8 +1,9 @@
 import React from 'react'
 import logo from '../img/logo.png';
-import flechita from "../img/flechita.png"
 import CartWidget from "./CartWidget"
+import {NavLink} from "react-router-dom"
 const secciones = ["Novedades ","Hombre ","Mujer ","Contacto "]
+
 const ListaDeSecciones = () => {
 
     return(
@@ -19,21 +20,18 @@ const NavBar = () => {
         <>
         <nav>
             <div className="inicio">
-                 <a href="#"><img src={logo} alt="logo" /></a>
+                 <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
             </div>
             <ListaDeSecciones/>
-            <CartWidget/>
-            <div className="perfil">
-                <div className="foto">
-                    <p>MD</p>
-                </div>
-                <h4>
-                    Bienvenido
-                </h4>
-                <a href="#"><img src={flechita} className="flechita" alt=""/></a>
+            <div className="burger">
+                <div className="lin1"></div>
+                <div className="lin2"></div>
+                <div className="lin3"></div>
             </div>
-           
-           
+            <div className="perfil">
+                <NavLink to="/login">Ingresar</NavLink>
+            </div>  
+            <CartWidget/> 
         </nav>
         </>
     )
