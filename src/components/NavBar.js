@@ -1,15 +1,15 @@
 import React from 'react'
 import logo from '../img/logo.png';
 import CartWidget from "./CartWidget"
-import {NavLink} from "react-router-dom"
-const secciones = ["Novedades ","Hombre ","Mujer ","Contacto "]
+import {Link, NavLink} from "react-router-dom"
+const secciones = [{nombre:"Novedades",id:"N"},{nombre:"Hombre",id:"H"},{nombre:"Mujer ",id:"M"},{nombre:"Contacto ",id:"C"}]
 
 const ListaDeSecciones = () => {
 
     return(
         <div className="secciones">
         {secciones.map((seccion) => (
-            <a href="#">{seccion}</a>
+            <Link to={`/category/${seccion.id}`}><a>{seccion.nombre}</a></Link>
         ))}
         </div>
 

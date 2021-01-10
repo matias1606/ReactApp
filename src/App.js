@@ -1,32 +1,30 @@
+
 import './App.css';
-import Footer from "./Footer";
-import Main from "./Main"
-import Header from "./Header"
+import React,{useEffect,useState} from "react";
+import Footer from "./layout/Footer";
+import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
-import {BrowserRouter} from "react-router-dom"
-// class App extends React.Component {
-  
-//   // El metodo render se ejecuta cuando 
-//   // un componente entra en pantalla
-//   render(
-//       <>
-//         <header>
-//           <h1></h1>
-//         </header>
-//         <footer>
-//           <p>&copy; Copyright</p>
-//         </footer>
-//   )
-// }
+import ItemDetailContainer from "./components/ItemDetailContainer"
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Header/>
-        <ItemListContainer greeting="Greeting"/>
-        <Main/>
-        {/* <Footer/> */}
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          <NavBar/>
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer greeting="Greeting"/>
+            </Route>
+            <Route exact path="/category/:category">
+              <ItemListContainer greeting="Greeting"/>
+            </Route>
+            <Route exact path="/item/:id">
+              <ItemDetailContainer/>
+            </Route>
+          </Switch> 
+        </BrowserRouter>
+      </div>
     </>
   );
 }
