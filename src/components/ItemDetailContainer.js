@@ -7,7 +7,7 @@ const ItemDetailContainer = ()=>{
     let {id} = useParams()
     useEffect(() => {
         let promise = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(fetch(`https://5ffb4c7363ea2f0017bdb048.mockapi.io/item/items?id=${id}`)), 1000)
+            setTimeout(() => resolve(fetch(`https://5ffb4c7363ea2f0017bdb048.mockapi.io/item/items?id=${id}`)),1000)
           });
         
             promise.then((res)=>{

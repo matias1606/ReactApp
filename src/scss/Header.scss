@@ -7,21 +7,18 @@
 }
 
 nav{
+    position: relative;
     margin:2.5%;
     background-color: white;
     color: black;
     display: flex;
-    border-radius: 40px;
     min-height: 8vh;
     justify-content: space-between;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     align-items: center;
     font-weight: 700;
     font-style: italic;
     .inicio{
-        height: 90%;
         width: 10%;
-        align-self: center;
         display: flex;
         align-items: center;
         padding-left:3.5%;
@@ -71,60 +68,78 @@ nav{
     .compras{
         width: 10%;
         .icono{
-            margin-top: 7px;
             text-align: center;
+            margin-top: 7px;
             font-size: 25px; 
             color: black;   
           }
     }
     .burger{
         display: none;
-        div{
-            width: 25px;
-            height: 5px;
-            background-color: rgb(0, 0, 0);
-            border-radius: 4px;
-            margin: 5px;
-        }
+        font-size: 25px;
+        font-weight: lighter;
     }
 }
 
 @media screen and (max-width:768px){
     nav{ 
+        position: fixed;
+        display: grid;
+        grid-template-columns: 1fr 2fr 7fr 1fr 3fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "burger inicio ... perfil compras";
         border-radius: 0px;
-        margin: 0px;
+        margin: 0;
+        .inicio{
+            grid-area: inicio;
+            a{
+                margin-top:2.6px;
+            }
+        }
+        .compras{
+            grid-area: compras;
+            width: auto;
+            justify-self: center;
+            .icono{
+                text-align: none;
+            }
+        }
+        .perfil{
+            width: auto;
+            justify-self: center;
+            align-self: center;
+            grid-area: perfil;
+        }
+        .burger{            
+            grid-area: burger;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
     }
     nav .inicio img{
                 min-width: 30px;
             }
     .secciones{
         position: absolute;
-        right: 0px;
+        left: 0px;
         height: 92vh;
         top:8vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
-        transform :translateX(100%);
-    }
-    .compras{
-        position: absolute;
-        left: 80px;
-        top: 1%;
-    }
-    .perfil{
-        position: absolute;
-        left:128px;
-        top: 2.3%;
-    }
-    nav .burger{
-        cursor: pointer;
-        display: block;
-        position: absolute;
-        left: 90%;
+        width:70%;
+        transform :translateX(-100%);
+        background-color: white;
+        transition: transform .5s ease-in-out;
+        
+       
+
     }
 }
 .nav-active{
+    background-color: white;
     transform: translateX(0%);
 }

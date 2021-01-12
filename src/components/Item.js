@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import ItemListContainer from "./ItemListContainer"
 const Item = ({category,id,title,price,pictureUrl}) => {
     return(<>
-        <Link to={`/item/${id}`}>
+        <Link className="linkItem" to={`/item/${id}`}>
                 <div className="producto">
                     <div className="img">
                         <img src={`${pictureUrl}`} alt={`producto#${id}`}/>
@@ -13,7 +13,7 @@ const Item = ({category,id,title,price,pictureUrl}) => {
                         {title}
                     </div>
                     <div className="precio">
-                        <p>${price}</p>
+                        ${price}
                     </div>  
                 </div>
         </Link>

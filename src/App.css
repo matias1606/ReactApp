@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,22 +9,19 @@
 }
 
 nav {
+  position: relative;
   margin: 2.5%;
   background-color: white;
   color: black;
   display: flex;
-  border-radius: 40px;
   min-height: 8vh;
   justify-content: space-between;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   align-items: center;
   font-weight: 700;
   font-style: italic;
 }
 nav .inicio {
-  height: 90%;
   width: 10%;
-  align-self: center;
   display: flex;
   align-items: center;
   padding-left: 3.5%;
@@ -72,26 +70,54 @@ nav .compras {
   width: 10%;
 }
 nav .compras .icono {
-  margin-top: 7px;
   text-align: center;
+  margin-top: 7px;
   font-size: 25px;
   color: black;
 }
 nav .burger {
   display: none;
-}
-nav .burger div {
-  width: 25px;
-  height: 5px;
-  background-color: black;
-  border-radius: 4px;
-  margin: 5px;
+  font-size: 25px;
+  font-weight: lighter;
 }
 
 @media screen and (max-width: 768px) {
   nav {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 2fr 7fr 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "burger inicio ... perfil compras";
     border-radius: 0px;
-    margin: 0px;
+    margin: 0;
+  }
+  nav .inicio {
+    grid-area: inicio;
+  }
+  nav .inicio a {
+    margin-top: 2.6px;
+  }
+  nav .compras {
+    grid-area: compras;
+    width: auto;
+    justify-self: center;
+  }
+  nav .compras .icono {
+    text-align: none;
+  }
+  nav .perfil {
+    width: auto;
+    justify-self: center;
+    align-self: center;
+    grid-area: perfil;
+  }
+  nav .burger {
+    grid-area: burger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
   }
 
   nav .inicio img {
@@ -100,86 +126,91 @@ nav .burger div {
 
   .secciones {
     position: absolute;
-    right: 0px;
+    left: 0px;
     height: 92vh;
     top: 8vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-  }
-
-  .compras {
-    position: absolute;
-    left: 80px;
-    top: 1%;
-  }
-
-  .perfil {
-    position: absolute;
-    left: 128px;
-    top: 2.3%;
-  }
-
-  nav .burger {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    left: 90%;
+    width: 70%;
+    transform: translateX(-100%);
+    background-color: white;
+    transition: transform 0.5s ease-in-out;
   }
 }
 .nav-active {
+  background-color: white;
   transform: translateX(0%);
 }
 
 .itemList {
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
+}
+.itemList a {
+  width: calc(100% / 4 - 4px - -4px / 4 - 0.01px);
+}
+
+.linkItem {
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
 }
 
 .producto {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3fr 3fr 1fr 1fr;
-  gap: 30px 0px;
-  grid-template-areas: "img img img" "img img img" "nombre nombre nombre" "precio precio precio";
-  height: 500px;
-  width: 300px;
+  grid-template-rows: 2fr 2fr 0.5fr 0.5fr;
+  gap: 10px 0px;
+  width: 98%;
+  grid-template-areas: "img img img" "img img img" "nombre nombre nombre" "precio ... ...";
+  height: auto;
   background-color: white;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.producto:hover .nombre {
+  text-decoration: underline;
+  color: black;
 }
 
 .img {
   grid-area: img;
-  text-align: center;
   align-self: end;
 }
 .img img {
-  width: 200px;
-  height: 100%;
+  width: 100%;
 }
 
 .nombre {
   grid-area: nombre;
-  justify-self: center;
-  align-self: end;
-  font-weight: 700;
+  font-family: "DM Sans";
+  font-weight: 500;
 }
 
 .precio {
   grid-area: precio;
-  justify-self: center;
-  align-self: start;
+  font-family: "DM Sans";
   font-weight: 500;
 }
 
 @media screen and (max-width: 768px) {
   .producto {
     margin-top: 40px;
+  }
+
+  .itemList {
+    justify-content: flex-start;
+  }
+  .itemList a {
+    width: calc(100% / 2 - 4px - -4px / 2 - 0.01px);
+  }
+}
+@media screen and (max-width: 1279px) and (min-width: 480px) {
+  .itemList a {
+    width: calc(100% / 3 - 4px - -4px / 3 - 0.01px);
   }
 }
 * {
