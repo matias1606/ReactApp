@@ -1,14 +1,24 @@
-import React from "react"
-
+import React,{useState} from "react"
+import { Link } from "react-router-dom"
+import ItemCount from "./ItemCount"
 const ItemDetail = ({item}) =>{
-    /* console.log(item) */
+    const [cantidad,setCantidad] = useState(0)
+    const onAdd = (cant)=>{
+        setCantidad(cantidad + cant)
+    }
     return (
             <>
-                <div className="detalles">
+            {item.title ? <><div className="detalles">
                     <img src={item.pictureUrl} alt=""/>
-                    <p className="detalle">{item.price}</p>
-                    <p className="detalle">{item.descripcion}</p>
+                    <div className="caracteristicas">
+                        <p className="detalle nombre">{item.title ? item.title.charAt(0).toUpperCase() + item.title.slice(1):null}</p>
+                        <p className="detalle precio">${item.price}</p>
+                        {cantidad >= 1 ? <Link to="/cart">Terminar compra</Link> : <ItemCount stock={5} initial={0} onAdd={onAdd}/>}
+                        <p className="detalle descripcion">{item.descripcion}</p>
+                    </div>
+                    
                 </div>
+                </>:null}  
             </>
     )
 }

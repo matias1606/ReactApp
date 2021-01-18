@@ -213,6 +213,46 @@ nav .burger {
     width: calc(100% / 3 - 4px - -4px / 3 - 0.01px);
   }
 }
+.detalles {
+  align-self: center;
+  display: flex;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.detalles img {
+  border-radius: inherit;
+  max-width: 50%;
+  height: auto;
+}
+.detalles .caracteristicas {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-template-areas: ". nombre nombre . " ". precio . ." ". anadir . ." ". . . .";
+}
+.detalles .caracteristicas .nombre {
+  grid-area: nombre;
+  font-size: 24px;
+  font-weight: 400;
+  align-self: center;
+}
+.detalles .caracteristicas .anadir-carrito {
+  grid-area: anadir;
+}
+.detalles .caracteristicas .descripcion {
+  grid-area: descripcion;
+  font-size: 16px;
+  display: none;
+}
+.detalles .caracteristicas .precio {
+  grid-area: precio;
+  font-size: 20px;
+  font-weight: 500;
+  justify-self: start;
+}
+
 * {
   font-family: "Source Sans Pro", sans-serif;
   box-sizing: border-box;
@@ -234,6 +274,11 @@ nav .burger {
 }
 .App-link {
   color: #61dafb;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes App-logo-spin {

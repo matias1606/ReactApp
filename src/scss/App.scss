@@ -2,6 +2,7 @@
 
 @import "Header";
 @import "Producto";
+@import "DetalleProducto";
 
 *{
  font-family: 'Source Sans Pro', sans-serif;
@@ -29,7 +30,10 @@
     color: #61dafb;
   }
 // desde aca estilo de card para boton agregar carrito y la lista de items
-
+.app{
+  display: flex;
+  flex-direction: column;
+}
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);

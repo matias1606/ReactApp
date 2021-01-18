@@ -9,7 +9,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 const App = () => {
   return (
     <>
-      <div>
+      <div className="app">
         <BrowserRouter>
           <NavBar/>
           <Switch>

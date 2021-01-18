@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import ItemList from './ItemList'
-import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({prop}) =>{
@@ -19,12 +18,10 @@ const ItemListContainer = ({prop}) =>{
         })  
     }
 , [category])
-console.log(items)
     return(
         <>
         {/* <h1>{prop.greeting}</h1> */}
         <ItemList items={items}/>
-        <ItemCount stock={5} initial={0} onAdd={(cant)=>{console.log(cant)}}/>
         </>
     )
 }
