@@ -1,14 +1,18 @@
-import React,{useContext, useState} from "react"
+import React,{useEffect,useContext, useState} from "react"
 import { Link } from "react-router-dom"
 import ItemCount from "./ItemCount"
 import cartContext from "../context/cartContext"
 const ItemDetail = ({item}) =>{
     const [cantidad,setCantidad] = useState(0)
-    const {addItem} = useContext(cartContext)
+    const {actualizarTotal,addItem,actualizarCantidad,lista,Cantidad} = useContext(cartContext)
     const onAdd = (cant)=>{
         setCantidad(cant)
         addItem(item,cant)
     }
+    useEffect(() => {
+        actualizarTotal()
+        actualizarCantidad()
+    }, [lista,Cantidad])
     return (
             <>
             {item.title ? <><div className="detalles">

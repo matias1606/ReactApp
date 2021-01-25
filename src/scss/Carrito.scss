@@ -1,0 +1,40 @@
+.container-carrito{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .tot{
+        margin-top: 30px;
+        width: 85%;
+    }
+}
+.item{
+    display: flex;
+    height: 200px;
+    width: 85%;
+    img{
+        height: 100%;
+    }
+    .boton-cerrar{
+        color: red;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    .info-carrito{
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        width: 50%;
+        h2{
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .subTot{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 17px;
+            margin-top: auto;
+        }
+    }
+    
+}
