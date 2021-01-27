@@ -7,12 +7,11 @@ const ItemDetail = ({item}) =>{
     const {actualizarTotal,addItem,actualizarCantidad,lista,Cantidad} = useContext(cartContext)
     const onAdd = (cant)=>{
         setCantidad(cant)
-        addItem(item,cant)
+        if(cant > 0){
+            addItem(item,cant)
+        }
+
     }
-    useEffect(() => {
-        actualizarTotal()
-        actualizarCantidad()
-    }, [lista,Cantidad])
     return (
             <>
             {item.title ? <><div className="detalles">

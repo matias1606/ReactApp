@@ -13,20 +13,19 @@ const CartProvider = ({ children }) => {
             return false
         }
         }
-    const addItem = (item, quantity) => {
-        if(isInCart(item.id)){
-            let indice = lista.findIndex((elemento)=>{
-                return elemento.item.id == item.id
-            })
-            let aux = lista
-            aux[indice].quantity += quantity  
-            setLista([...aux])
-        }else{
-            let aux = { item, quantity:quantity }
-            setLista([...lista, aux])
-            console.log(lista)
+        function addItem(newItem, quantity) {
+            const idx = lista.findIndex((listI) => listI.item.id === newItem.id)
+            if (idx === -1) {
+                const l = [...lista, { item: newItem, quantity }]
+                setLista(l)
+            } else {
+                const newQuantity = lista[idx].quantity + quantity
+                const oldI = lista.filter((oldI) => oldI.item.id !== lista[idx].item.id)
+                const l = [...oldI, { item: lista[idx].item, quantity: newQuantity }]
+                setLista(l)
+            }
         }
-    }
+    
     const removeItem = (elemento)=>{
         const listaNew = lista.filter(p=> p.item.id != elemento.item.id)
         setLista(listaNew)
@@ -35,15 +34,17 @@ const CartProvider = ({ children }) => {
         let suma = 0;
         lista.forEach(elemento => suma += elemento.item.price*elemento.quantity)
         setTotal(suma)
+        return suma
     }
     const actualizarCantidad = () => {
         let cantidad = 0;
         lista.forEach(elemento => cantidad += elemento.quantity)
         setCantidad(cantidad)
+        return cantidad
     }
     return (
         <>
-            <Provider value={{addItem: addItem,lista:lista,removeItem:removeItem,Cantidad:Cantidad, actualizarCantidad:actualizarCantidad,Total:Total,actualizarTotal:actualizarTotal}}>
+            <Provider value={{addItem: addItem,lista:lista,removeItem:removeItem,Cantidad:lista.length, actualizarCantidad:actualizarCantidad,Total:Total,actualizarTotal:actualizarTotal}}>
                 {children}
             </Provider>
         </>

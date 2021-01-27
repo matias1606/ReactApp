@@ -4,10 +4,6 @@ import { Link, NavLink } from "react-router-dom"
 import {AiOutlineClose} from "react-icons/ai"
 const Cart = () => {
     const { lista, Total, actualizarTotal,removeItem,actualizarCantidad} = useContext(cartContext)
-    useEffect(() => {
-        actualizarTotal()
-        actualizarCantidad()
-    }, [lista])
     return (
         <div className={lista.length == 0? "": "container-carrito"}>
             {lista.length == 0 ? <>
@@ -37,7 +33,7 @@ const Cart = () => {
                         </>
                     )
                 })}
-                <h2 className="tot">Total: ${Total}</h2>
+                <h2 className="tot">Total: ${actualizarTotal()}</h2>
             </>}
 
         </div>

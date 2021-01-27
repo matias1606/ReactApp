@@ -4,15 +4,12 @@ import { Link } from 'react-router-dom'
 import cartContext from "../context/cartContext"
   
 const CartWidget = () => {
-    const {Cantidad,actualizarCantidad} = useContext(cartContext)
-    useEffect(() => {
-        actualizarCantidad()
-    }, [Cantidad])
+    const {Cantidad,actualizarCantidad,lista} = useContext(cartContext)
+    console.log(lista)
     return(
-        
         <div className = "compras">
-            {Cantidad? <><Link className="link" to="/Cart"><p className="icono"><FaShoppingCart/></p></Link>
-            <span className="cantItems">{Cantidad}</span></>:null}
+            {Cantidad != 0? <><Link className="link" to="/Cart"><p className="icono"><FaShoppingCart/></p></Link>
+            <span className="cantItems">{actualizarCantidad()}</span></>:null}
             
         </div>
     )

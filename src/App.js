@@ -1,4 +1,3 @@
-
 import './App.css';
 import React, { useEffect, useState } from "react";
 import Footer from "./layout/Footer";
@@ -8,6 +7,7 @@ import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import CartProvider from "./context/CartProvider"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+
 const App = () => {
   return (
       <div className="app">
