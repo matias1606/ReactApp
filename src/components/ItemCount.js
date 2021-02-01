@@ -1,10 +1,8 @@
-import React, {useState} from "react"
-
+import React, {useState,useContext,useEffect} from "react"
 
 const ItemCount = ({stock,initial,onAdd}) => {
     const [cantidad,setCant] = useState(initial)
     const [restante,setStock] = useState(stock)
-
     const aumentarCantidad = () => {
         cantidad >= restante ? alert("No puede superar la cantidad total de stock") : setCant(cantidad+1)
     }

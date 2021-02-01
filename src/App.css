@@ -67,13 +67,28 @@ nav .perfil a {
   color: black;
 }
 nav .compras {
-  width: 10%;
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
 nav .compras .icono {
   text-align: center;
   margin-top: 7px;
   font-size: 25px;
   color: black;
+}
+nav .compras .cantItems {
+  color: #fff;
+  font-size: 80%;
+  background-color: #e74c3c;
+  position: absolute;
+  top: 40%;
+  left: 78%;
+  -webkit-transform: translate(-50%, -90%);
+  -moz-transform: translate(-50%, -90%);
+  transform: translate(-50%, -90%);
+  padding: 0 12%;
+  border-radius: 1000px;
 }
 nav .burger {
   display: none;
@@ -83,7 +98,8 @@ nav .burger {
 
 @media screen and (max-width: 768px) {
   nav {
-    position: fixed;
+    position: sticky;
+    top: 0;
     display: grid;
     grid-template-columns: 1fr 2fr 7fr 1fr 3fr;
     grid-template-rows: 1fr;
@@ -213,6 +229,47 @@ nav .burger {
     width: calc(100% / 3 - 4px - -4px / 3 - 0.01px);
   }
 }
+.container-carrito {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.container-carrito .tot {
+  margin-top: 30px;
+  width: 85%;
+}
+
+.item {
+  display: flex;
+  height: 200px;
+  width: 85%;
+}
+.item img {
+  height: 100%;
+}
+.item .boton-cerrar {
+  color: red;
+  align-self: flex-start;
+  cursor: pointer;
+}
+.item .info-carrito {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  width: 50%;
+}
+.item .info-carrito h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+.item .info-carrito .subTot {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 17px;
+  margin-top: auto;
+}
+
 .detalles {
   align-self: center;
   display: flex;
@@ -260,6 +317,9 @@ nav .burger {
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App-logo {
@@ -279,6 +339,7 @@ nav .burger {
 .app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
