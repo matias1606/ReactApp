@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react"
 import cartContext from "../context/cartContext"
 import { Link, NavLink } from "react-router-dom"
 import {AiOutlineClose} from "react-icons/ai"
+<<<<<<< HEAD
 import {firestore} from "../firebaseConfig"
 import firebase from "firebase"
 const Cart = () => {
@@ -30,6 +31,10 @@ const Cart = () => {
                    
                
     }
+=======
+const Cart = () => {
+    const { lista, Total, actualizarTotal,removeItem,actualizarCantidad} = useContext(cartContext)
+>>>>>>> c43f4407b47194166d2edf2b13e26a67c3ed838c
     return (
         <div className={lista.length == 0? "": "container-carrito"}>
             {lista.length == 0 ? <>
@@ -48,6 +53,13 @@ const Cart = () => {
                                     <p>precio x unidad: ${elemento.item.price}</p>
                                     <p className="cant">Cantidad : {elemento.quantity}</p>
                                     <p className="subTot">SubTotal: $ {elemento.item.price * elemento.quantity}</p>
+<<<<<<< HEAD
+=======
+                                {/* <p>{elemento.quantity}</p>
+                                <h1>{elemento.item.id}</h1>
+
+                                <button>remover</button> */}
+>>>>>>> c43f4407b47194166d2edf2b13e26a67c3ed838c
                                 </div>
                                 <h2 onClick={()=>{removeItem(elemento)}} className="boton-cerrar"><AiOutlineClose></AiOutlineClose></h2>
                                 
@@ -56,6 +68,7 @@ const Cart = () => {
                     )
                 })}
                 <h2 className="tot">Total: ${actualizarTotal()}</h2>
+<<<<<<< HEAD
                 <form onSubmit={manejarCompra}>
                 <div>
                     <input onChange={e=>setNombre(e.target.value)} type="text" placeholder="nombre" value={nombre} />
@@ -70,6 +83,10 @@ const Cart = () => {
             </form>
             </>}
             {id != ""? <p>su orden de compra ha sido confirmada, Nro de orden : {id}</p>:null}
+=======
+            </>}
+
+>>>>>>> c43f4407b47194166d2edf2b13e26a67c3ed838c
         </div>
     )
 }

@@ -9,7 +9,11 @@ const ItemListContainer = ({prop}) =>{
         const db = firestore;
         const collection = category != undefined ? db.collection("items").where('categoryId','array-contains',category) : db.collection("items")
         const query = collection.get()
+<<<<<<< HEAD
         .then(({docs})=>{setItems(docs.map(doc=>({id:doc.id,...doc.data()})))})
+=======
+        .then((resultado)=>{setItems(resultado.docs.map(doc=>doc.data()))})
+>>>>>>> c43f4407b47194166d2edf2b13e26a67c3ed838c
         .catch(()=>{
           console.log("Algo salio mal!")
         })

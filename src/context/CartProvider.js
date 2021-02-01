@@ -42,12 +42,18 @@ const CartProvider = ({ children }) => {
         setCantidad(cantidad)
         return cantidad
     }
+<<<<<<< HEAD
     const limpiarCarrito = ()=>{
         setLista([])
     }
     return (
         <>
             <Provider value={{limpiarCarrito:limpiarCarrito,addItem: addItem,lista:lista,removeItem:removeItem,Cantidad:lista.length, actualizarCantidad:actualizarCantidad,Total:Total,actualizarTotal:actualizarTotal}}>
+=======
+    return (
+        <>
+            <Provider value={{addItem: addItem,lista:lista,removeItem:removeItem,Cantidad:lista.length, actualizarCantidad:actualizarCantidad,Total:Total,actualizarTotal:actualizarTotal}}>
+>>>>>>> c43f4407b47194166d2edf2b13e26a67c3ed838c
                 {children}
             </Provider>
         </>
