@@ -1,3 +1,6 @@
+# Proyecto de E-commerce en React Js
+Este proyecto es un e-commerce sencillo creado a partir de una "library" de Js conocida como react. Presenta un pequeño catalogo de items navegables con distintas categorias y permite realizar acciones de compra y almacenamiento en carrito.
+Ademas de las librerias obligatorias del curso (ej. React-router-dom, firebase) fueron utilizadas solamente la libreria de Fontawesome y React-icons para facilitar el uso de iconos dentro de la pagina.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
