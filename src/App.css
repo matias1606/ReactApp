@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -83,11 +84,11 @@ nav .compras .cantItems {
   background-color: #e74c3c;
   position: absolute;
   top: 40%;
-  left: 78%;
+  left: 77%;
   -webkit-transform: translate(-50%, -90%);
   -moz-transform: translate(-50%, -90%);
-  transform: translate(-50%, -90%);
-  padding: 0 12%;
+  transform: translate(-52%, -84%);
+  padding: 0 14%;
   border-radius: 1000px;
 }
 nav .burger {
@@ -229,11 +230,22 @@ nav .burger {
     width: calc(100% / 3 - 4px - -4px / 3 - 0.01px);
   }
 }
+.wrapper-carrito {
+  display: flex;
+}
+
 .container-carrito {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
   align-items: center;
+  margin-left: 30px;
+}
+.container-carrito .check-out {
+  visibility: visible;
+}
+.container-carrito .check-in {
+  visibility: hidden;
 }
 .container-carrito .tot {
   margin-top: 30px;
@@ -308,6 +320,99 @@ nav .burger {
   font-size: 20px;
   font-weight: 500;
   justify-self: start;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container-form {
+  background-color: #fafbfc;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  width: 30%;
+  max-width: 100%;
+}
+.container-form.carrito-vacio {
+  display: none;
+}
+.container-form .header {
+  background-color: #fafbfc;
+  border-bottom: 0.5px solid #f0f0f0;
+  padding: 20px 40px;
+}
+.container-form .header h2 {
+  margin: 0;
+}
+.container-form .form {
+  padding: 30px 40px;
+}
+.container-form .form .boton-error {
+  visibility: hidden;
+}
+.container-form .form .check-in {
+  visibility: hidden;
+}
+.container-form .form .check-out {
+  visibility: visible;
+}
+.container-form .form .form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.container-form .form .form-control.success input {
+  border-color: #2ecc71;
+}
+.container-form .form .form-control.success .fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+.container-form .form .form-control.error input {
+  border-color: #e74c3c;
+}
+.container-form .form .form-control.error .fa-exclamation-circle {
+  visibility: visible;
+  color: #e74c3c;
+}
+.container-form .form .form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+.container-form .form .form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.container-form .form .form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+.container-form .form .form-control .svg-inline--fa {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+.container-form .form .form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.container-form .form button {
+  background-color: lightcoral;
+  border: 2px solid lightcoral;
+  color: white;
+  display: block;
+  padding: 10px;
+  width: 100%;
 }
 
 * {

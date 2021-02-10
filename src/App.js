@@ -1,12 +1,12 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import Footer from "./layout/Footer";
 import Cart from "./components/Cart"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import CartProvider from "./context/CartProvider"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import FormProvider from './context/FormProvider';
 
 const App = () => {
   return (
@@ -26,7 +26,9 @@ const App = () => {
                 <ItemDetailContainer />
               </Route>
               <Route exact path="/Cart">
-                <Cart/>
+                <FormProvider>
+                  <Cart/>
+                </FormProvider>
               </Route>
             </Switch>
           </CartProvider>

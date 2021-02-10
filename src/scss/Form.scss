@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+.container-form{
+        background-color: #fafbfc;
+        color: rgba(0,0,0,0.87);
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        overflow: hidden;
+        width: 30%;
+        max-width: 100%;
+        &.carrito-vacio{
+            display: none;
+        }
+        .header{
+            background-color: #fafbfc;
+            border-bottom: 0.5px solid #f0f0f0;
+            padding: 20px 40px;
+            h2{
+                margin: 0;
+            }
+        }
+        .form{
+            padding: 30px 40px;
+            .boton-error{
+                visibility: hidden;
+            }
+            .check-in{
+                visibility: hidden;
+            }
+            .check-out{
+                visibility: visible;
+            }
+            .form-control{
+                margin-bottom: 10px;
+                padding-bottom: 20px;
+                position: relative;
+                &.success{
+                    input{
+                        border-color: #2ecc71;
+                    }
+                    .fa-check-circle{
+                        visibility: visible;
+                        color: #2ecc71;
+                    }
+                }
+                &.error{
+                    input{
+                        border-color: #e74c3c;
+                    }
+                    .fa-exclamation-circle{
+                        visibility: visible;
+                        color: #e74c3c;
+                    }
+                    small{
+                        visibility: visible;
+                        color: #e74c3c;
+                    }
+                }
+                label{
+                    display: inline-block;
+                    margin-bottom: 5px;
+                }
+                input{
+                    border: 2px solid #f0f0f0;
+                    border-radius: 4px;
+                    display: block;
+                    font-family: inherit;
+                    font-size: 14px;
+                    padding: 10px;
+                    width: 100%;
+                }
+                .svg-inline--fa{
+                    visibility: hidden;
+                    position: absolute;
+                    top:40px;
+                    right: 10px;
+                }
+                small{
+                    visibility: hidden;
+                    position: absolute;
+                    bottom:0;
+                    left: 0;
+                }  
+            }
+            button{
+                background-color: lightcoral;
+                border: 2px solid lightcoral;
+                color: white;
+                display: block;
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    }

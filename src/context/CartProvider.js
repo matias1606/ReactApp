@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, createContext } from "react"
+import React, { useState } from "react"
 import { Provider } from "./cartContext"
 const CartProvider = ({ children }) => {
     const [lista, setLista] = useState([])
